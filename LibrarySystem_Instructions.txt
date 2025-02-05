@@ -1,0 +1,28 @@
+This file provides guidance to run Standalone or Client-Server Library Management System.
+
+Standalone Application:
+Execute below scripts in terminal to compile library system in case library_system.exe file doesn't exist or not working properly.
+
+g++ -o library_system Main.cpp Book.cpp User.cpp Library.cpp LibraryItems.cpp Transaction.cpp LibraryManager.cpp -std=c++17 -pthread -lws2_32
+
+Then run application with below script:  
+./library_system
+
+Client-Server Application:
+Execute below scripts in terminal to compile server in case server.exe file doesn't exist or not working properly.
+
+g++ -o server MainServer.cpp Server.cpp Book.cpp User.cpp Library.cpp LibraryItems.cpp Transaction.cpp LibraryManager.cpp -std=c++17 -pthread -lws2_32
+
+Then run server with below script:  
+./server
+
+Client connects with server using a specified IP address which is configured in MainClient.cpp file
+Replace IP address in MainClient.cpp file with IP address shown in terminal when server started.
+
+Save the file and recompile the client program with below command:
+
+g++ -o client MainClient.cpp Client.cpp -std=c++17 -pthread -lws2_32
+
+Run client with below command in terminal:
+
+./client
